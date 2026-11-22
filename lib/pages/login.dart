@@ -77,9 +77,9 @@ class _LoginPageState extends State<LoginPage> {
                       validator: (value) {
                         if (value != null) {
                           if (value.isEmpty) {
-                            return 'Sila masukkan alamat emel';
+                            return 'Please insert your email address';
                           } else if (!value.contains('@')) {
-                            return 'Format email tidak valid';
+                            return 'Invalid format';
                           }
                         }
                         return null;
@@ -102,23 +102,23 @@ class _LoginPageState extends State<LoginPage> {
                       validator: (value) {
                         if (value != null) {
                           if (value.isEmpty) {
-                            return 'Sila masukkan password';
+                            return 'Please insert your password';
                           }
                           if (value.length < 6) {
-                            return 'Password mesti melebihi 6 aksara';
+                            return 'Password must be more at least 6 characters';
                           }
                           if (!RegExp(r'[A-Z]').hasMatch(value)) {
-                            return 'Password mesti menggunakan kombinasi huruf besar';
+                            return 'Must contain at least one uppercase letter';
                           }
                           if (!RegExp(r'[a-z]').hasMatch(value)) {
-                            return 'Password mesti menggunakan kombinasi huruf kecil';
+                            return 'Must contain at least one lowercase letter';
                           }
                           if (!RegExp(r'[0-9]').hasMatch(value)) {
-                            return 'Password mesti menggunakan kombinasi nombor';
+                            return 'Must contain at least one number';
                           }
                           if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]')
                               .hasMatch(value)) {
-                            return 'Password mesti menggunakan kombinasi simbol';
+                            return 'Must contain at least one special character';
                           }
                         }
                         return null;
